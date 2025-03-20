@@ -8,8 +8,7 @@
 *.tfplan
 
 # 機密情報が含まれる可能性のある状態ファイルを無視
-*.tfstate
-*.tfstate.backup
+*.tfstate*
 
 # クラッシュログを無視
 crash.log
