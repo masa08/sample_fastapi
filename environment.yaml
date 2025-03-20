@@ -1,0 +1,23 @@
+name: metadata-service
+channels:
+  - defaults
+dependencies:
+  - python=3.13.2
+  - pip
+  - pip:
+    - fastapi[standard]~=0.115.11
+    - pydantic-settings~=2.8.1
+    # Linter & Formater
+    - flake8~=7.1.2
+    - black~=25.1.0
+    - isort~=5.11.2
+    # DB
+    - sqlmodel~=0.0.23
+    - asyncpg~=0.30.0
+    # Cache
+    - redis~=5.2.1
+    # Testing
+    - pytest~=8.3.5
+    - pytest-mock~=3.14.0
+    - pytest-asyncio~=0.25.3
+    - aiosqlite~=0.21.0
