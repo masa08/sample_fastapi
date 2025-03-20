@@ -1,16 +1,16 @@
 services:
-  db:
-    image: postgres:12
-    container_name: metadata-service-db
-    volumes:
-      - db_data:/var/lib/postgresql
-    ports:
-      - "5432:5432"
-    restart: always
-    environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=ebs_fnol_db_tmnf
+  # db:
+  #   image: postgres:12
+  #   container_name: metadata-service-db
+  #   volumes:
+  #     - db_data:/var/lib/postgresql
+  #   ports:
+  #     - "5432:5432"
+  #   restart: always
+  #   environment:
+  #     - POSTGRES_USER=root
+  #     - POSTGRES_PASSWORD=password
+  #     - POSTGRES_DB=ebs_fnol_db_tmnf
   # Use this when you test rate limit with redis
   # redis:
   #   image: redis:latest
@@ -25,9 +25,6 @@ services:
       - .:/app
     ports:
       - "8080:8080"
-    depends_on:
-      - db
-    env_file: .env.local
 
 volumes:
   db_data:

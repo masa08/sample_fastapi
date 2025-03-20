@@ -1,0 +1,19 @@
+# Terraformの作業ディレクトリを無視
+.terraform/
+
+# Terraformのロックファイルを無視
+.terraform.lock.hcl
+
+# Terraformのプランファイルを無視
+*.tfplan
+
+# 機密情報が含まれる可能性のある状態ファイルを無視
+*.tfstate
+*.tfstate.backup
+
+# クラッシュログを無視
+crash.log
+
+# Terraformの変数ファイル（機密情報が含まれる場合がある）を無視
+*.tfvars
+*.tfvars.json
