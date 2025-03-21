@@ -128,7 +128,7 @@ resource "aws_iam_role_policy_attachment" "eks_cni_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "eks_ecr_readonly_policy" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
   role       = aws_iam_role.eks_node_role.name
 }
 
@@ -136,7 +136,7 @@ resource "aws_iam_role_policy_attachment" "eks_ecr_readonly_policy" {
 resource "aws_eks_cluster" "fastapi_cluster" {
   name     = "fastapi-eks-cluster"
   role_arn = aws_iam_role.eks_cluster_role.arn
-  version  = "1.28"
+  version  = "1.31"
 
   vpc_config {
     subnet_ids = [

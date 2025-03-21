@@ -9,7 +9,7 @@ IMAGE_TAG="latest"
 aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $(aws ecr describe-repositories --repository-names $ECR_REPOSITORY --region $AWS_REGION --query "repositories[0].repositoryUri" --output text)
 
 # Build the Docker image
-docker build -t $ECR_REPOSITORY .
+docker buildx build --platform linux/amd64 -t $ECR_REPOSITORY .
 
 # Tag the Docker image
 REPOSITORY_URI=$(aws ecr describe-repositories --repository-names $ECR_REPOSITORY --region $AWS_REGION --query "repositories[0].repositoryUri" --output text)
