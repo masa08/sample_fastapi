@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 3
 
 image:
   repository: 047723140817.dkr.ecr.ap-northeast-1.amazonaws.com/fastapi-app
